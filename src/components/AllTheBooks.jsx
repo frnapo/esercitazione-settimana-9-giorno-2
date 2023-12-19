@@ -38,7 +38,7 @@ class AllTheBoks extends Component {
     const books = this.getBooksByCategory();
 
     return (
-      <Container className="mt-5">
+      <Container className="mt-4">
         <Button className="me-2" variant="outline-secondary" onClick={() => this.selectCategory("fantasy")}>
           Fantasy
         </Button>
@@ -58,17 +58,21 @@ class AllTheBoks extends Component {
           {this.state.selectedCategory ? (
             books.map((book) => (
               <Col lg={3} key={book.asin} className="mb-3">
-                <Card className="h-100 shadow border-0">
+                <Card className="h-100 shadow border-0 d-flex flex-column">
                   <Card.Img variant="top" src={book.img} style={{ objectFit: "contain", height: "250px" }} />
-                  <Card.Body>
-                    <Card.Title>{book.title}</Card.Title>
-                    <Card.Text>
-                      {book.price}€ - <Badge bg="danger">{book.category}</Badge>
-                    </Card.Text>
-                    <Button variant="success w-100 mb-2">Acquista</Button>
-                    <Button className=" w-100" variant="secondary">
-                      Salva per dopo
-                    </Button>
+                  <Card.Body className="d-flex flex-column justify-content-between">
+                    <div>
+                      <Card.Title>{book.title}</Card.Title>
+                      <Card.Text>
+                        {book.price}€ - <Badge bg="dark">{book.category}</Badge>
+                      </Card.Text>
+                    </div>
+                    <div>
+                      <Button variant="success w-100 mb-2 mt-3">Acquista</Button>
+                      <Button className="w-100" variant="secondary">
+                        Salva per dopo
+                      </Button>
+                    </div>
                   </Card.Body>
                 </Card>
               </Col>
