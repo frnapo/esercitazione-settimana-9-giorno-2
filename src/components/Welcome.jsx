@@ -4,7 +4,7 @@ const Welcome = () => (
   <Container fluid="lg" className="mt-4">
     <Row>
       <Col md={12}>
-        <div class="alert alert-primary" role="alert">
+        <div className="alert alert-primary" role="alert">
           Benvenuto su EpiBooks!
         </div>
       </Col>
